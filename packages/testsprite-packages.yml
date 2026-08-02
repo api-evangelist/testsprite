@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.testsprite.com/cli/getting-started/installation,
+  https://docs.testsprite.com/mcp/getting-started/installation, and the npm
+  registry (registry.npmjs.org). TestSprite publishes two first-party npm
+  packages: the CLI and the MCP server. There is no language client-library SDK
+  (the API is consumed through the CLI, the MCP server, and the Web Portal), so
+  no per-language SDK pointer is emitted.
+description: >-
+  First-party TestSprite tooling packages verified against the npm registry and
+  the official installation docs. Both are published under the @testsprite npm
+  scope.
+packages:
+  - language: javascript
+    registry: npm
+    name: "@testsprite/testsprite-cli"
+    url: https://www.npmjs.com/package/@testsprite/testsprite-cli
+    source: https://github.com/TestSprite/testsprite-cli
+    install: npm install -g @testsprite/testsprite-cli
+    binary: testsprite
+    version_seen: 0.4.0
+    official: true
+    description: Official TestSprite command-line interface — the verification loop for coding agents and CI.
+  - language: javascript
+    registry: npm
+    name: "@testsprite/testsprite-mcp"
+    url: https://www.npmjs.com/package/@testsprite/testsprite-mcp
+    install: npx @testsprite/testsprite-mcp@latest
+    transport: stdio
+    version_seen: 0.0.39
+    official: true
+    description: >-
+      TestSprite MCP Server — connects an IDE's AI assistant (Cursor, Claude
+      Code, VS Code, Copilot) to TestSprite's testing engine to generate,
+      execute, and debug tests. Detail in mcp/testsprite-mcp.yml.

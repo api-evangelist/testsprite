@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.testsprite.com/cli/reference/exit-codes
+description: >-
+  TestSprite's error/exit-code registry — the branching contract for coding
+  agents and CI. The CLI emits a stable process exit code, a machine-readable
+  error code string, and a test/run status value. Captured verbatim from the
+  Exit Codes & Errors reference. This is the non-payments error registry (there
+  is no OpenAPI 4xx/5xx surface to derive RFC 9457 problem types from).
+envelope:
+  exit_code: process exit status (integer)
+  error_code: stable string code (e.g. AUTH_FORBIDDEN)
+  status: test/run status value
+exit_codes:
+  - {code: 0, meaning: Success.}
+  - {code: 1, meaning: Generic failure — non-passed run status, or unhandled server error.}
+  - {code: 2, meaning: Not yet implemented.}
+  - {code: 3, meaning: Auth error — key missing, unparseable, revoked, or forbidden scope.}
+  - {code: 4, meaning: Not found — ID doesn't exist or belongs to another tenant.}
+  - {code: 5, meaning: Validation error — bad field/enum, payload too large, missing required flag.}
+  - {code: 6, meaning: Conflict or precondition — snapshot in flight, run already in flight, idempotency mismatch.}
+  - {code: 7, meaning: Timeout or unsupported — polling ceiling reached, or feature not on current backend.}
+  - {code: 10, meaning: Unavailable or transport failure — retriable with backoff.}
+  - {code: 11, meaning: Rate limited — honor the Retry-After header.}
+  - {code: 12, meaning: Insufficient credits — non-retriable; top up in the dashboard.}
+  - {code: 14, meaning: Client too old — backend requires a newer CLI; upgrade to proceed.}
+  - {code: 129, meaning: SIGHUP interrupt (terminal or SSH session closed).}
+  - {code: 130, meaning: SIGINT interrupt (Ctrl-C).}
+  - {code: 143, meaning: SIGTERM interrupt.}
+error_codes:
+  - {code: AUTH_REQUIRED, meaning: No auth header present.}
+  - {code: AUTH_INVALID, meaning: Key unparseable or revoked.}
+  - {code: AUTH_FORBIDDEN, meaning: Missing scope or cross-tenant access.}
+  - {code: NOT_FOUND, meaning: ID doesn't exist or belongs to another tenant.}
+  - {code: VALIDATION_ERROR, meaning: Bad field, enum value, or cursor.}
+  - {code: PAYLOAD_TOO_LARGE, meaning: Body over the size cap.}
+  - {code: CONFLICT, meaning: Snapshot in flight, run already in flight, or cancelling finished run.}
+  - {code: PRECONDITION_FAILED, meaning: Test changed since fetch (newer codeVersion).}
+  - {code: IDEMPOTENCY_BODY_MISMATCH, meaning: Same idempotency key reused with different body.}
+  - {code: RATE_LIMITED, meaning: 60 triggers/min/key exceeded.}
+  - {code: INSUFFICIENT_CREDITS, meaning: Credit balance insufficient.}
+  - {code: CLIENT_TOO_OLD, meaning: CLI below backend's minimum supported version.}
+  - {code: UNSUPPORTED, meaning: Feature not on current backend version.}
+  - {code: INTERNAL, meaning: Unhandled server error.}
+  - {code: UNAVAILABLE, meaning: Downstream service temporarily unavailable.}
+status_values:
+  test: [draft, ready, queued, running, passed, failed, blocked, cancelled, unknown]
+  run: [queued, running, passed, failed, blocked, cancelled]
+  step: [passed, failed, null]

@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.testsprite.com/cli/core/authentication,
+  https://docs.testsprite.com/web-portal/admin/api-keys — TestSprite has no
+  public OpenAPI, so this profile is captured from the authentication docs
+  rather than derived from a spec.
+description: >-
+  TestSprite authenticates with a per-account API key created in the Web Portal
+  (Settings -> API Keys -> Create new key). The key is verified by calling
+  GET /me before it is stored. The CLI persists it locally at
+  ~/.testsprite/credentials (INI-style, mode 0600) and supports named profiles;
+  the MCP server takes the key via the API_KEY environment variable. Keys carry
+  a fixed set of scopes (see scopes/testsprite-scopes.yml).
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  api_key_source: https://www.testsprite.com/dashboard/settings/apikey
+  oauth2_flows: []
+schemes:
+  - name: apiKey
+    type: apiKey
+    in: header
+    key_prefix: sk-
+    verification: GET /me
+    description: >-
+      TestSprite API key (observed prefix `sk-`). Created once in the dashboard
+      and shown only at creation time. Used by the CLI (`testsprite setup`), the
+      MCP server (API_KEY env var), and Web Portal external tooling.
+    scopes_detail: scopes/testsprite-scopes.yml
+    docs: https://docs.testsprite.com/cli/core/authentication

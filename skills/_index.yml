@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: generated
+source: >-
+  Packaged Agent Skills grounded in the real TestSprite MCP tools
+  (mcp/testsprite-mcp.yml) and CLI command surface (cli/testsprite-cli.yml).
+  TestSprite also ships a provider-installed agent skill via `testsprite setup`
+  / `testsprite agent install`; these skills mirror those marquee flows.
+skills:
+  - file: testsprite-mcp-verify-app.md
+    name: Verify an app with the TestSprite MCP server
+    api: mcp/testsprite-mcp.yml
+    operations:
+      - testsprite_bootstrap_tests
+      - testsprite_generate_code_summary
+      - testsprite_generate_standardized_prd
+      - testsprite_generate_frontend_test_plan
+      - testsprite_generate_backend_test_plan
+      - testsprite_generate_code_and_execute
+      - testsprite_open_test_result_dashboard
+      - testsprite_rerun_tests
+  - file: testsprite-cli-ci-gate.md
+    name: Gate CI on TestSprite results with the CLI
+    api: cli/testsprite-cli.yml
+    operations: [setup, project list, test run, test wait, test result, test failure summary, usage]

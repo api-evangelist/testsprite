@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.testsprite.com/cli/core/authentication
+docs: https://docs.testsprite.com/cli/core/authentication
+description: >-
+  TestSprite API keys are scoped. These are API-key permission scopes (not OAuth2
+  flows — TestSprite issues no OAuth authorization/token endpoints). New and
+  grandfathered keys both default to the five scopes the CLI needs. Scope
+  enforcement surfaces as the AUTH_FORBIDDEN error / exit code 3 (see
+  errors/testsprite-error-codes.yml).
+scheme:
+  type: apiKey
+  binding: TestSprite API key
+scopes:
+  - scope: read:me
+    description: Identity and usage — `auth status`, `usage`.
+  - scope: read:projects
+    description: Read projects — `project list`, `project get`.
+  - scope: read:tests
+    description: Read tests, execution steps, results, and failure artifacts.
+  - scope: write:tests
+    description: >-
+      Create/update/delete tests and projects — test create, test create-batch,
+      test update, test delete, test delete-batch, test code put, test plan put,
+      project create, project update.
+  - scope: run:tests
+    description: Execute tests — test run, test wait, test rerun.

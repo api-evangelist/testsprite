@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.testsprite.com/cli/reference/exit-codes,
+  https://docs.testsprite.com/cli/reference/whats-included,
+  https://www.testsprite.com/changelog
+description: >-
+  TestSprite versioning and lifecycle signals. The client (CLI/MCP) is versioned
+  with semver on npm and the backend negotiates a minimum supported client
+  version. TestSprite publishes a dated product changelog. No public status page,
+  numeric uptime SLA, or RFC 8594 Sunset/Deprecation header contract was found at
+  the time of capture (absence recorded as honest data).
+versioning:
+  scheme: client semver (npm) + backend minimum-version negotiation
+  mechanism: >-
+    Backend rejects clients below its minimum with CLIENT_TOO_OLD / exit code 14;
+    UNSUPPORTED / exit code 7 signals a feature not on the current backend.
+  cli_version_seen: 0.4.0
+  mcp_version_seen: 0.0.39
+  docs: https://docs.testsprite.com/cli/reference/whats-included
+changelog: https://www.testsprite.com/changelog
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+  public_uptime_target: null
+  notes: No public numeric uptime SLA found.
+status_page: null
+roadmap:
+  url: https://docs.testsprite.com/cli/reference/whats-included
+  notes: The CLI "What's Included" page enumerates current capabilities and roadmap items.

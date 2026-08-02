@@ -1,0 +1,71 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.testsprite.com/cli/reference/command-reference,
+  https://docs.testsprite.com/cli/getting-started/installation
+description: >-
+  The TestSprite CLI (binary `testsprite`) is the verification layer for the
+  agentic coding era — it puts the full testing platform in a coding agent's
+  hands from the terminal and CI. The npm package itself is catalogued in
+  packages/testsprite-packages.yml; this artifact enumerates its command surface.
+docs: https://docs.testsprite.com/cli/getting-started/overview
+repo: https://github.com/TestSprite/testsprite-cli
+package: "@testsprite/testsprite-cli"
+binary: testsprite
+install:
+  npm: npm install -g @testsprite/testsprite-cli
+auth:
+  command: testsprite setup
+  detail: Prompts for an API key, verifies it via GET /me, and installs the agent skill in one step.
+  no_agent: testsprite setup --no-agent
+  credentials_file: ~/.testsprite/credentials
+  scopes: authentication/testsprite-authentication.yml
+commands:
+  setup_auth:
+    - {name: setup, description: One-shot onboarding (configure key + install agent skill).}
+    - {name: doctor, description: "Diagnose environment: version, Node, profile, endpoint, auth, skill."}
+    - {name: auth status, description: Show user/key/env/scopes for active profile.}
+    - {name: auth remove, description: Remove credentials for active profile.}
+  projects:
+    - {name: project list, description: List projects.}
+    - {name: project get, description: Get a project by id.}
+    - {name: project create, description: Create a new project.}
+    - {name: project update, description: Update project metadata.}
+    - {name: project delete, description: Permanently delete a project and everything under it.}
+    - {name: project credential, description: Set the static backend credential for BE tests (free tier).}
+    - {name: project auto-auth, description: Configure recurring-token auto-refresh login for BE tests (Pro).}
+  test_management:
+    - {name: test list, description: List tests in a project.}
+    - {name: test get, description: Get a test by id.}
+    - {name: test create, description: Create a test from code or agent-supplied plan.}
+    - {name: test create-batch, description: Create multiple FE tests from plan specs.}
+    - {name: test scaffold, description: Emit a schema-correct starter plan or BE code skeleton (local).}
+    - {name: test lint, description: Validate plan/steps files offline before creating.}
+    - {name: test update, description: Update test metadata and BE dependencies.}
+    - {name: test delete, description: Permanently delete a test.}
+    - {name: test delete-batch, description: Bulk delete tests by ID list, project, or status.}
+  test_execution:
+    - {name: test run, description: "Trigger a run; combine with --wait to block until terminal."}
+    - {name: test wait, description: Wait for one or more runs to reach terminal status.}
+    - {name: test cancel, description: Cancel queued/running runs server-side.}
+    - {name: test rerun, description: Re-execute as replay (FE no-credit; BE closure).}
+    - {name: test flaky, description: Replay a test N times and report a stability score.}
+  test_analysis:
+    - {name: test steps, description: List execution steps with optional run-id scoping.}
+    - {name: test result, description: Latest result or run history with optional analysis.}
+    - {name: test diff, description: Compare two runs' verdicts and step deltas.}
+    - {name: test code get, description: Print generated test code.}
+    - {name: test code put, description: Replace test code with ETag-guarded concurrency.}
+    - {name: test plan put, description: "Replace a FE test's planSteps[]."}
+    - {name: test failure get, description: Write failure-context bundle for latest failing run.}
+    - {name: test failure summary, description: Print one-screen triage card.}
+    - {name: test artifact get, description: Download failure bundle for a specific run.}
+  agent_integration:
+    - {name: agent install, description: Write TestSprite skill files into a project.}
+    - {name: agent list, description: List supported agent targets and landing paths.}
+    - {name: agent status, description: Check installed skill files against CLI version.}
+  billing:
+    - {name: usage, description: Show credit balance and plan info (alias credits).}
+key_flows:
+  - The agent loop — create -> run -> read failures -> fix -> rerun, driven by a coding agent.
+  - CI/CD gating on stable exit codes and JSON output (see errors/testsprite-error-codes.yml).

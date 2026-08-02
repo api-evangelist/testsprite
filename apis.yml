@@ -1,7 +1,29 @@
 aid: testsprite
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/testsprite.png
 name: TestSprite
-description: TestSprite is a company surfaced as a portfolio company of techstars and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  TestSprite is an AI-powered software testing platform (a Techstars-backed
+  company) that gives autonomous coding agents a verification loop: it uses an
+  app like a real user, generates and executes end-to-end UI and backend API
+  tests, and returns actionable failure bundles (screenshots, DOM snapshots,
+  root causes, and fix suggestions) so an agent can repair its own work before
+  bugs ship. It is delivered as an official Model Context Protocol (MCP) server
+  that runs inside AI coding assistants (Cursor, Claude Code, VS Code, Copilot),
+  a first-party command-line interface for terminal and CI/CD use, a browser Web
+  Portal, and a GitHub App that tests every pull request. Authentication is by
+  scoped API key.
 url: https://raw.githubusercontent.com/api-evangelist/testsprite/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +33,18 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Software Testing
+- API Testing
+- Test Automation
+- AI
+- Developer Tools
+- Model Context Protocol
+- Quality Assurance
+- CI/CD
+- Agentic
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +54,64 @@ maintainers:
 common:
 - type: Website
   url: https://testsprite.com/
+- type: DeveloperPortal
+  url: https://docs.testsprite.com/
+- type: Documentation
+  url: https://docs.testsprite.com/
+- type: APIReference
+  url: https://docs.testsprite.com/cli/reference/command-reference
+- type: GettingStarted
+  url: https://docs.testsprite.com/mcp/getting-started/overview
+- type: Quickstart
+  url: https://docs.testsprite.com/cli/getting-started/quickstart
+- type: GitHubOrganization
+  url: https://github.com/TestSprite
+- type: Blog
+  url: https://www.testsprite.com/blog
+- type: ChangeLog
+  url: https://www.testsprite.com/changelog
+- type: Roadmap
+  url: https://docs.testsprite.com/cli/reference/whats-included
+- type: Support
+  url: https://discord.gg/QQB9tJ973e
+- type: Pricing
+  url: https://www.testsprite.com/pricing
+- type: SignUp
+  url: https://www.testsprite.com/auth/cognito/sign-up
+- type: Login
+  url: https://www.testsprite.com/auth/cognito/sign-in
+- type: TermsOfService
+  url: https://www.testsprite.com/terms
+- type: PrivacyPolicy
+  url: https://www.testsprite.com/privacy
+- type: MCPServer
+  url: mcp/testsprite-mcp.yml
+- type: CLI
+  url: cli/testsprite-cli.yml
+- type: Packages
+  url: packages/testsprite-packages.yml
+- type: Authentication
+  url: authentication/testsprite-authentication.yml
+- type: OAuthScopes
+  url: scopes/testsprite-scopes.yml
+- type: ErrorCatalog
+  url: errors/testsprite-error-codes.yml
+- type: Conventions
+  url: conventions/testsprite-conventions.yml
+- type: Idempotency
+  url: conventions/testsprite-conventions.yml
+- type: Lifecycle
+  url: lifecycle/testsprite-lifecycle.yml
+- type: DomainSecurity
+  url: security/testsprite-domain-security.yml
+- type: Conformance
+  url: conformance/testsprite-conformance.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/testsprite-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1

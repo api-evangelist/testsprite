@@ -1,0 +1,93 @@
+# TestSprite Documentation - Full Content
+
+## Docs
+
+- [Key Terms](https://docs.testsprite.com/cli/concepts/key-terms.md): Core CLI concepts — projects, tests, runs, statuses, credits, scopes, and failure bundles — all in one place.
+- [The Agent Loop](https://docs.testsprite.com/cli/concepts/the-agent-loop.md): Why the CLI is a loop, not a one-shot -- how your coding agent creates, runs, reads, fixes, and reruns, and how coverage compounds with every pass.
+- [Coding Agent Integration](https://docs.testsprite.com/cli/core/agent-integration.md): Let your coding agent drive the TestSprite verification loop on its own — create, run, read failures, fix, and rerun without a human in the middle.
+- [Authentication](https://docs.testsprite.com/cli/core/authentication.md): Configure an API key, check your active identity, and manage named profiles for multiple accounts or environments.
+- [Cancelling a Run](https://docs.testsprite.com/cli/core/cancelling-runs.md): Ctrl-C detaches, it never cancels — testsprite test cancel is the real stop button. What each one does to the run, your credits, and your exit codes.
+- [Creating Tests](https://docs.testsprite.com/cli/core/creating-tests.md): Author frontend test plans and backend test code, then create individual tests or batches from the CLI.
+- [Editing & Deleting Tests](https://docs.testsprite.com/cli/core/editing-tests.md): Update a test's metadata, replace its plan steps or code safely, and delete tests one at a time or in bulk.
+- [Projects](https://docs.testsprite.com/cli/core/projects.md): List, inspect, create, and update the typed (frontend or backend) projects that hold your tests.
+- [Reading Results](https://docs.testsprite.com/cli/core/reading-results.md): Inspect individual tests, step-by-step execution logs, run history, and failure bundles from the CLI.
+- [Rerun & Auto-Heal](https://docs.testsprite.com/cli/core/rerun-and-auto-heal.md): Replay a saved test cheaply, batch-rerun a whole suite, and let AI repair UI drift automatically — all from the CLI.
+- [Running Tests](https://docs.testsprite.com/cli/core/running-tests.md): Trigger a test run from the CLI, wait for a verdict, and understand every exit code the runner emits.
+- [Installation](https://docs.testsprite.com/cli/getting-started/installation.md): Install the TestSprite CLI and sign in in under 2 minutes.
+- [Overview](https://docs.testsprite.com/cli/getting-started/overview.md): The verification layer for the agentic coding era — TestSprite CLI puts the full testing platform in your coding agent's hands.
+- [Quickstart](https://docs.testsprite.com/cli/getting-started/quickstart.md): Create a test, run it against your live app, and read exactly what broke — in about 10 minutes.
+- [Quickstart for Coding Agents](https://docs.testsprite.com/cli/getting-started/quickstart-for-agents.md): Let your coding agent take this repo from zero to its first real test run — install once, then talk to your agent instead of the terminal.
+- [CI/CD](https://docs.testsprite.com/cli/integrations/ci-cd.md): Gate your pipeline on TestSprite results using stable exit codes and JSON output.
+- [Command Reference](https://docs.testsprite.com/cli/reference/command-reference.md): Every testsprite command, flag, and output shape in one place.
+- [Configuration](https://docs.testsprite.com/cli/reference/configuration.md): Credentials file, profiles, environment variables, and the JSON output contract.
+- [Exit Codes & Errors](https://docs.testsprite.com/cli/reference/exit-codes.md): Every exit code, error code, and test status value the CLI emits — your branching contract for agents and CI.
+- [Output & Scripting](https://docs.testsprite.com/cli/reference/output-and-scripting.md): The stable JSON contract, piping into jq, and composing the verification loop in a script or CI job.
+- [What's Included](https://docs.testsprite.com/cli/reference/whats-included.md): What the TestSprite CLI can do today, what's on the roadmap, and what stays in the Web Portal or MCP.
+- [Common Issues](https://docs.testsprite.com/cli/troubleshooting/common-issues.md): Fixes for the problems you're most likely to hit with the TestSprite CLI.
+- [FAQ](https://docs.testsprite.com/learn/faq.md)
+- [MCP Demo & Examples](https://docs.testsprite.com/learn/mcp-demo.md): Real-world TestSprite MCP Server output from an actual e-commerce project test run.
+- [Healing & Observability](https://docs.testsprite.com/mcp/concepts/healing-observability.md): How TestSprite detects, explains, and repairs failures with strong signals and auto-healing.
+- [Key Terms](https://docs.testsprite.com/mcp/concepts/key-terms.md): Essential TestSprite concepts explained simply.
+- [Test Types & Lifecycle](https://docs.testsprite.com/mcp/concepts/test-type-lifecycle.md): What we test (frontend UI flows and backend APIs) and how tests live through their lifecycle.
+- [Add Extra Tests](https://docs.testsprite.com/mcp/core/add-extra-tests.md): Expand test coverage by adding additional tests to your existing project.
+- [Test Running & Monitoring](https://docs.testsprite.com/mcp/core/continuous-monitoring.md): Set up continuous test execution and monitoring for your projects.
+- [Create Tests for New Change](https://docs.testsprite.com/mcp/core/create-tests-new-feature.md): Generate tests scoped to recent code changes using TestSprite MCP Server.
+- [Create Tests for New Projects](https://docs.testsprite.com/mcp/core/create-tests-new-project.md): Generate comprehensive test suites for a brand new project using TestSprite MCP Server.
+- [Deploy MCP Tests](https://docs.testsprite.com/mcp/core/deploy-to-production.md): Learn how to deploy and run your MCP tests against staging and production environments.
+- [Modify or Update Tests](https://docs.testsprite.com/mcp/core/modify-tests.md): Update existing tests to reflect changes in your application using TestSprite's interactive in-place editing capabilities.
+- [Regenerate Tests](https://docs.testsprite.com/mcp/core/regenerate-tests.md): Regenerate test suites for existing projects to update coverage.
+- [Test Progress Dashboard](https://docs.testsprite.com/mcp/core/test-progress-dashboard.md): Monitor your entire test suite as it runs with live status updates, detailed test insights, and execution recordings.
+- [MCP Tools References](https://docs.testsprite.com/mcp/core/tools.md): Complete reference for all TestSprite MCP Server tools available to your AI assistant.
+- [First MCP Test](https://docs.testsprite.com/mcp/getting-started/first-test.md): Experience the magic of TestSprite MCP Server with your first automated test in under 10 minutes.
+- [Installation](https://docs.testsprite.com/mcp/getting-started/installation.md): Get TestSprite MCP Server up and running in your IDE in under 2 minutes.
+- [Introduction](https://docs.testsprite.com/mcp/getting-started/introduction.md): Get started with TestSprite MCP Server
+- [Overview](https://docs.testsprite.com/mcp/getting-started/overview.md): The No-Code, No-Prompt Testing Agent That Makes Your Software Work
+- [GitHub Integration](https://docs.testsprite.com/mcp/integrations/github-integration.md): Connect your GitHub repositories to TestSprite for automatic testing on every pull request.
+- [Cost & Performance](https://docs.testsprite.com/mcp/maintenance/cost-performance.md): Understand cost and performance considerations when using TestSprite.
+- [Import Existing Tests](https://docs.testsprite.com/mcp/maintenance/migration-from-other-platforms.md): Migrate your existing tests from other testing platforms to TestSprite.
+- [Security & Compliance](https://docs.testsprite.com/mcp/maintenance/security-compliance.md): Learn about TestSprite's security features and compliance standards.
+- [Test Maintenance](https://docs.testsprite.com/mcp/maintenance/test-maintenance.md): Learn how to maintain and update your test suites over time.
+- [Application Detection Issues](https://docs.testsprite.com/mcp/troubleshooting/application-detection-issues.md): Solutions to application detection problems with TestSprite MCP Server.
+- [IDE Configuration Issues](https://docs.testsprite.com/mcp/troubleshooting/ide-configuration-issues.md): Solutions to IDE configuration problems with TestSprite MCP Server.
+- [Installation Issues](https://docs.testsprite.com/mcp/troubleshooting/installation-issues.md): Solutions to common installation problems with TestSprite MCP Server.
+- [Test Execution Issues](https://docs.testsprite.com/mcp/troubleshooting/test-execution-issues.md): Solutions to test execution problems with TestSprite MCP Server.
+- [API Keys & MCP Integration](https://docs.testsprite.com/web-portal/admin/api-keys.md): Manage your TestSprite API keys in the Web Portal and view test results from MCP Server executions.
+- [Billing and Plans](https://docs.testsprite.com/web-portal/admin/billing-and-plans.md): Plan tiers, monthly credits, and the Free-plan exploration quota.
+- [Key Terms](https://docs.testsprite.com/web-portal/concepts/key-terms.md): Core concepts you'll encounter throughout the TestSprite Web Portal — projects, tests, lists, schedules, and the data they collect.
+- [Testing Lifecycle](https://docs.testsprite.com/web-portal/concepts/testing-lifecycle.md): How a test moves from configuration to verified outcome — for both UI and API projects, with the differences called out.
+- [API Discovery](https://docs.testsprite.com/web-portal/core/api/api-discovery.md): How TestSprite extracts your endpoints from your documentation and natural-language hints — and how to refine the discovered set before plan generation runs.
+- [Plan Generation & Editing](https://docs.testsprite.com/web-portal/core/api/api-plan-gen.md): How TestSprite turns discovered endpoints into a structured test plan, and how to review, prune, refine, and add to it before generation runs.
+- [Rerun](https://docs.testsprite.com/web-portal/core/api/api-rerun.md): Re-execute one API test, a chain, or every test in the project — with or without re-running upstream producers — to confirm a fix or absorb backend changes.
+- [Overview](https://docs.testsprite.com/web-portal/core/api/api-testing.md): AI-powered backend testing for RESTful APIs. Discover endpoints, generate plans, ship endpoint and integration tests, watch them run, and auto-clean up the data they touched.
+- [Auto-Auth (Pro)](https://docs.testsprite.com/web-portal/core/api/auto-auth.md): Configure a login flow once and TestSprite fetches a fresh token before every backend test run — no more pasting expiring credentials.
+- [Auto Cleanup](https://docs.testsprite.com/web-portal/core/api/auto-cleanup.md): After every test run, TestSprite auto-builds DELETE chains that wipe the records your tests created — so your test environment stays empty between runs.
+- [Data Flow](https://docs.testsprite.com/web-portal/core/api/data-flow.md): A grouped, navigable view of every HTTP call TestSprite made to your API during the most recent run — request, response, timing, and producer/consumer wiring shown inline.
+- [Dependency Chains](https://docs.testsprite.com/web-portal/core/api/dependency-chains.md): How TestSprite figures out the run order for your tests — and the rules that determine when a test is Blocked vs ready to run.
+- [Dynamic Variables](https://docs.testsprite.com/web-portal/core/api/dynamic-variables.md): How TestSprite carries values from one API response into the next request — the mechanism that makes integration tests, auto cleanup, and data-flow analysis possible.
+- [Endpoint Tests Generation](https://docs.testsprite.com/web-portal/core/api/endpoint-tests.md): How TestSprite turns each plan row into a runnable Python test, with verification to keep low-quality output out of your suite.
+- [Integration Tests](https://docs.testsprite.com/web-portal/core/api/integration-tests.md): Multi-step API tests that chain endpoints together — one step's response feeds the next request. TestSprite identifies these workflows in your API automatically.
+- [Quickstart](https://docs.testsprite.com/web-portal/core/api/quickstart.md): Walk through your first API project end-to-end — from project creation to a passing HTTP suite — in about 10 minutes.
+- [Agent Actions](https://docs.testsprite.com/web-portal/core/ui/agent-actions.md): The video gallery of every UI test run. One tile per recording, bucketed by status, with click-to-play and search/filter.
+- [Auto-Heal (Pro)](https://docs.testsprite.com/web-portal/core/ui/auto-heal.md): When a UI test fails on rerun because the page changed, Auto-Heal recovers the test against the new UI — so refactors and copy edits don't break your suite.
+- [Feature Exploration (Beta)](https://docs.testsprite.com/web-portal/core/ui/feature-exploration.md): How TestSprite explores your live app feature by feature — what you see, what each outcome means, and how to retry, reconfigure, or continue.
+- [Quickstart](https://docs.testsprite.com/web-portal/core/ui/quickstart.md): Walk through your first UI project end-to-end — from project creation to a passing browser test — in about 10 minutes.
+- [Plan Generation & Editing](https://docs.testsprite.com/web-portal/core/ui/ui-plan-gen.md): How TestSprite turns explored features into a UI test plan grounded in real observed flows — and how to review, prune, refine, and add to it before generation runs.
+- [Rerun](https://docs.testsprite.com/web-portal/core/ui/ui-rerun.md): Re-execute a single UI test, the whole project, or a scheduled run — from the dashboard, in a batch, or on a cadence.
+- [Step-by-Step Walkthrough](https://docs.testsprite.com/web-portal/core/ui/ui-step-by-step.md): After a UI test runs, replay it step by step — per-action HTML snapshots, full recorded video, and what happened at each step.
+- [Test Generation (UI)](https://docs.testsprite.com/web-portal/core/ui/ui-test-gen.md): How TestSprite turns each UI plan case into runnable Python + Playwright code, and what you see while tests stream into the project view.
+- [Overview](https://docs.testsprite.com/web-portal/core/ui/ui-testing.md): AI-powered front-end testing for web apps. Explore your app, generate plans grounded in real behavior, ship browser tests, watch them run, replay any step.
+- [Refining Tests](https://docs.testsprite.com/web-portal/core/working-with-test/refining-tests.md): Three ways to refine a test after the first run — edit the description, chat with the AI, or regenerate from scratch.
+- [Test Detail Page](https://docs.testsprite.com/web-portal/core/working-with-test/test-detail.md): A tour of every tab on the project detail page — what each one shows, when it's available, and how to use it.
+- [Introduction](https://docs.testsprite.com/web-portal/getting-started/introduction.md): Get started with TestSprite Web Portal
+- [Overview](https://docs.testsprite.com/web-portal/getting-started/overview.md): What the TestSprite Web Portal is, how it works, and what it can test.
+- [Your First Test](https://docs.testsprite.com/web-portal/getting-started/your-first-test.md): What happens during a TestSprite onboarding — the lifecycle of going from project creation to a passing test suite.
+- [GitHub Integration](https://docs.testsprite.com/web-portal/integrations/github-integration.md): Install the TestSprite GitHub App to run exploratory and regression tests against your pull requests automatically.
+- [Comparing Runs](https://docs.testsprite.com/web-portal/maintenance/comparing-runs.md): How to spot what changed between two scheduled runs — Previous Executions table, per-run pass count, Changes column, and the triage workflows built on them.
+- [Schedules (Pro)](https://docs.testsprite.com/web-portal/maintenance/monitoring.md): Schedule Test Lists to run on a cadence — daily, weekly, monthly — with notifications on regressions.
+- [Test Lists](https://docs.testsprite.com/web-portal/maintenance/test-lists.md): Organize test collections, track execution history, and manage testing projects efficiently.
+
+## Optional
+
+- [Website](https://www.testsprite.com/)
+- [Community](https://discord.gg/QQB9tJ973e)
+- [Contact Us](https://calendly.com/contact-hmul/schedule)

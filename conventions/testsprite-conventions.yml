@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.testsprite.com/cli/core/authentication,
+  https://docs.testsprite.com/cli/reference/exit-codes,
+  https://docs.testsprite.com/cli/reference/output-and-scripting — cross-cutting
+  request/response semantics of the TestSprite backend as surfaced by the CLI and
+  MCP server.
+description: >-
+  How the TestSprite API behaves across operations: authentication, idempotency,
+  rate-limit signaling, concurrency control, the JSON output contract, and the
+  error envelope. TestSprite exposes no public OpenAPI; these conventions are
+  captured from the CLI/MCP reference docs.
+authentication:
+  scheme: API key (header), created in the dashboard, verified via GET /me
+  detail: authentication/testsprite-authentication.yml
+idempotency:
+  supported: true
+  mechanism: client-supplied idempotency key on run/create operations
+  conflict_behavior: >-
+    Reusing the same idempotency key with a different request body returns the
+    IDEMPOTENCY_BODY_MISMATCH error (exit code 6, conflict/precondition class).
+  evidence: https://docs.testsprite.com/cli/reference/exit-codes
+concurrency:
+  mechanism: ETag / codeVersion optimistic concurrency
+  detail: >-
+    `test code put` is ETag-guarded; a stale write returns PRECONDITION_FAILED
+    (test changed since fetch, newer codeVersion).
+rate_limiting:
+  limit: 60 triggers per minute per key
+  signal: Retry-After header; CLI exit code 11 (RATE_LIMITED)
+  guidance: Honor the Retry-After header and back off.
+output_contract:
+  format: stable JSON (pipe into jq); documented output-and-scripting contract
+  docs: https://docs.testsprite.com/cli/reference/output-and-scripting
+versioning:
+  scheme: CLI semver with backend minimum-version negotiation
+  signal: CLIENT_TOO_OLD / exit code 14 when the CLI is below the backend minimum
+  detail: lifecycle/testsprite-lifecycle.yml
+error_envelope:
+  fields: [exit_code, error_code, status]
+  detail: errors/testsprite-error-codes.yml

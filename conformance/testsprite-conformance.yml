@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  Derived from mcp/testsprite-mcp.yml, authentication/testsprite-authentication.yml,
+  conventions/testsprite-conventions.yml, and errors/testsprite-error-codes.yml.
+  No published compliance certifications (SOC 2 / ISO 27001 / GDPR / HIPAA / PCI)
+  were found on the security & compliance page, so no Compliance pointer is
+  emitted.
+standards:
+  - id: model-context-protocol
+    conforms: true
+    evidence: Official MCP server (@testsprite/testsprite-mcp) exposing 8 stdio tools.
+  - id: api-key-auth
+    conforms: true
+    evidence: API-key authentication verified via GET /me; scoped keys.
+  - id: idempotency
+    conforms: true
+    evidence: Idempotency-key support with IDEMPOTENCY_BODY_MISMATCH conflict semantics.
+  - id: rate-limiting-retry-after
+    conforms: true
+    evidence: 60 triggers/min/key with Retry-After header (RATE_LIMITED / exit 11).
+  - id: optimistic-concurrency-etag
+    conforms: true
+    evidence: ETag/codeVersion-guarded writes (PRECONDITION_FAILED).
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth2 authorization/token endpoints; API-key scopes only.
+  - id: oidc
+    conforms: false
+    evidence: No /.well-known/openid-configuration document (302 redirect only).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors are code/exit-code based, not application/problem+json.

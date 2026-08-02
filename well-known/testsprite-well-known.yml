@@ -1,0 +1,14 @@
+generated: '2026-07-21'
+method: searched
+host: https://testsprite.com
+description: >-
+  Result of probing the /.well-known/ discovery surface on the TestSprite
+  registrable host. Every path returned a 302 redirect (SPA/marketing redirect),
+  not a real, correctly-typed discovery document — so nothing was saved verbatim
+  and no WellKnown catalog pointer is emitted. Statuses recorded for auditability.
+documents:
+  - {path: /.well-known/security.txt, status: 302}
+  - {path: /.well-known/openid-configuration, status: 302}
+  - {path: /.well-known/oauth-authorization-server, status: 302}
+  - {path: /.well-known/api-catalog, status: 302}
+  - {path: /.well-known/ai-plugin.json, status: 302}
