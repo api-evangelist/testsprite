@@ -1,48 +1,44 @@
 generated: '2026-07-21'
 method: searched
 status: published
-source: >-
-  https://docs.testsprite.com/mcp/getting-started/installation,
-  https://docs.testsprite.com/mcp/core/tools — TestSprite publishes an official
-  local (stdio) MCP server distributed on npm as @testsprite/testsprite-mcp.
-description: >-
-  TestSprite operates an official Model Context Protocol server that puts its
-  autonomous testing agent inside an AI coding assistant (Cursor, Claude Code,
-  VS Code, Copilot). It runs locally over stdio via npx and authenticates with a
-  TestSprite API key passed in the API_KEY environment variable. The tool list
-  below is captured verbatim from the MCP Tools reference.
+source: https://docs.testsprite.com/mcp/getting-started/installation, https://docs.testsprite.com/mcp/core/tools
+  — TestSprite publishes an official local (stdio) MCP server distributed on npm as @testsprite/testsprite-mcp.
+description: TestSprite operates an official Model Context Protocol server that puts its autonomous testing
+  agent inside an AI coding assistant (Cursor, Claude Code, VS Code, Copilot). It runs locally over stdio
+  via npx and authenticates with a TestSprite API key passed in the API_KEY environment variable. The
+  tool list below is captured verbatim from the MCP Tools reference.
 server:
   name: TestSprite
   transport: stdio
   install: npx @testsprite/testsprite-mcp@latest
-  package: "@testsprite/testsprite-mcp"
+  package: '@testsprite/testsprite-mcp'
   auth: api-key
   auth_env: API_KEY
   api_key_source: https://www.testsprite.com/dashboard/settings/apikey
-config_example: |
-  {
-    "mcpServers": {
-      "TestSprite": {
-        "command": "npx",
-        "args": ["@testsprite/testsprite-mcp@latest"],
-        "env": { "API_KEY": "your-api-key" }
-      }
-    }
-  }
+config_example: "{\n  \"mcpServers\": {\n    \"TestSprite\": {\n      \"command\": \"npx\",\n      \"\
+  args\": [\"@testsprite/testsprite-mcp@latest\"],\n      \"env\": { \"API_KEY\": \"your-api-key\" }\n\
+  \    }\n  }\n}\n"
 tools:
-  - name: testsprite_bootstrap_tests
-    description: Initialize testing environment and configuration.
-  - name: testsprite_generate_code_summary
-    description: Analyze codebase and generate architectural summary.
-  - name: testsprite_generate_standardized_prd
-    description: Generate standardized Product Requirements Document.
-  - name: testsprite_generate_frontend_test_plan
-    description: Generate comprehensive frontend test plan.
-  - name: testsprite_generate_backend_test_plan
-    description: Generate comprehensive backend test plan.
-  - name: testsprite_generate_code_and_execute
-    description: Generate and execute comprehensive test suite.
-  - name: testsprite_open_test_result_dashboard
-    description: Reopen the test result dashboard to review and edit past test runs.
-  - name: testsprite_rerun_tests
-    description: Rerun the previously generated test cases.
+- name: testsprite_bootstrap_tests
+  description: Initialize testing environment and configuration.
+- name: testsprite_generate_code_summary
+  description: Analyze codebase and generate architectural summary.
+- name: testsprite_generate_standardized_prd
+  description: Generate standardized Product Requirements Document.
+- name: testsprite_generate_frontend_test_plan
+  description: Generate comprehensive frontend test plan.
+- name: testsprite_generate_backend_test_plan
+  description: Generate comprehensive backend test plan.
+- name: testsprite_generate_code_and_execute
+  description: Generate and execute comprehensive test suite.
+- name: testsprite_open_test_result_dashboard
+  description: Reopen the test result dashboard to review and edit past test runs.
+- name: testsprite_rerun_tests
+  description: Rerun the previously generated test cases.
+deployment:
+  mode: remote
+  endpoint: https://www.testsprite.com/dashboard/settings/apikey
+  verified: probed
+  probe: not-mcp
+  checked: '2026-08-12'
+  source: catalog MCP census
