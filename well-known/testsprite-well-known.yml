@@ -1,14 +1,24 @@
 generated: '2026-07-21'
 method: searched
 host: https://testsprite.com
-description: >-
-  Result of probing the /.well-known/ discovery surface on the TestSprite
-  registrable host. Every path returned a 302 redirect (SPA/marketing redirect),
-  not a real, correctly-typed discovery document — so nothing was saved verbatim
-  and no WellKnown catalog pointer is emitted. Statuses recorded for auditability.
-documents:
-  - {path: /.well-known/security.txt, status: 302}
-  - {path: /.well-known/openid-configuration, status: 302}
-  - {path: /.well-known/oauth-authorization-server, status: 302}
-  - {path: /.well-known/api-catalog, status: 302}
-  - {path: /.well-known/ai-plugin.json, status: 302}
+description: Result of probing the /.well-known/ discovery surface on the TestSprite registrable host.
+  Every path returned a 302 redirect (SPA/marketing redirect), not a real, correctly-typed discovery document
+  — so nothing was saved verbatim and no WellKnown catalog pointer is emitted. Statuses recorded for auditability.
+hosts:
+- host: https://testsprite.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+  - path: /.well-known/openid-configuration
+    status: 302
+  - path: /.well-known/oauth-authorization-server
+    status: 302
+  - path: /.well-known/api-catalog
+    status: 302
+  - path: /.well-known/ai-plugin.json
+    status: 302
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
