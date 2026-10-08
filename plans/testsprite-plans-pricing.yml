@@ -1,0 +1,57 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.testsprite.com/pricing
+sources:
+- https://www.testsprite.com/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed+licensed
+  method: page
+  read: '2026-10-07'
+  evidence: Your own single-tenant deployment
+  managed_tier: Starter
+published: true
+note: Monthly/Yearly toggle noted with 'Save 35%'; prices shown are monthly. Enterprise offers single-tenant
+  deployment.
+plan_count: 5
+currency: USD
+plans:
+- name: Free
+  price_text: Free
+  period: month
+  included_quota: 150 credits per month; 1 environment; 30 days of run history; GitHub PR auto-test on
+    1 repo
+- name: Starter
+  price_text: $0
+  price: 0
+  currency: USD
+  period: month
+  included_quota: 400 credits per month; 1 environment; 30 days of run history; GitHub PR auto-test on
+    3 repos
+  overage: $19 from the 2nd month
+- name: Standard
+  price_text: $39
+  price: 39
+  currency: USD
+  period: month
+  included_quota: 800 credits per month; 3 environments; 90 days of run history; GitHub PR auto-test on
+    5 repos
+- name: Pro
+  price_text: $69
+  price: 69
+  currency: USD
+  period: month
+  included_quota: 1,600 credits per month; unlimited environments and run history
+- name: Enterprise
+  price_text: $199+
+  price: 199
+  currency: USD
+  period: month
+  unit: (From 10 seats)
+  included_quota: From 5,000 credits per month; single-tenant deployment; SSO, SCIM, audit logs
